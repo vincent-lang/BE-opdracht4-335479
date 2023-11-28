@@ -16,7 +16,7 @@ use App\Http\Controllers\gegevensController;
 
 Route::get('/', [gegevensController::class, 'index'])->name('instructeur.index');
 
-Route::get('/instructeur/{instructeur}/{row}/delete', [gegevensController::class, 'delete'])->name('instructeur.delete');
+Route::get('/instructeur/{instructeur}/delete', [gegevensController::class, 'delete'])->name('instructeur.delete');
 
 Route::get('/instructeur/{instructeur}/notActive', [gegevensController::class, 'notActive'])->name('instructeur.notActive');
 
