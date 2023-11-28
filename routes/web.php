@@ -16,6 +16,10 @@ use App\Http\Controllers\gegevensController;
 
 Route::get('/', [gegevensController::class, 'index'])->name('instructeur.index');
 
+Route::get('/instructeur/{instructeur}/list', [gegevensController::class, 'list'])->name('instructeur.list');
+
+Route::get('/instructeur/{instructeur}/addPage', [gegevensController::class, 'addPage'])->name('instructeur.addPage');
+
 Route::get('/instructeur/{instructeur}/delete', [gegevensController::class, 'delete'])->name('instructeur.delete');
 
 Route::get('/instructeur/{instructeur}/notActive', [gegevensController::class, 'notActive'])->name('instructeur.notActive');
