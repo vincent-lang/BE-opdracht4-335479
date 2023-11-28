@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Verdana;
+}
+
+table,th,td {
+    border: 0px;
+    margin: 0;
+}
+
+th,td {
+    border: 0px;
+    margin: 0;
+    width: 5rem;
+    border-bottom: 2px solid lightgrey;
+}
+
+th,td {
+    border-right: 2px solid lightgrey;
+    text-align: center;
+}
+
+th:nth-child(6) {
+    border-right: 2px solid lightgrey;
+}
+
+th:nth-of-type(1),td:nth-of-type(1) {
+    border-left: 2px solid lightgrey;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    color: limegreen;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h3.title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+a.link-back {
+    margin-left: 5rem;
+}
+
+h3>a, h3>input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: limegreen;
+    text-decoration: none;
+    border: 1px solid black;
+    box-shadow: 0.1rem 0.1rem 0.4rem black;
+    width: 15rem;
+    padding: 1rem;
+    transition: 0.5s;
+}
+
+h3>a:hover, h3>input:hover {
+    background-color: black;
+        border: 1px solid limegreen;
+    box-shadow: 0.1rem 0.1rem 0.4rem limegreen;
+    cursor: pointer;
+}
+
+form.wijzig {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    margin-left: 38rem;
+}
+
+form.wijzig>input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    width: 1rem;
+}
+
+form.wijzig>div.wijzig {
+    margin-top: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+img.small-img {
+    width: 20%;
+}
+
+h3.succes-text {
+    color: red;
+}
