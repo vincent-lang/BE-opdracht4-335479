@@ -21,15 +21,15 @@ class gegevensController extends Controller
         return view('instructeur.index', compact('instructeurs', 'instructeursAmount'));
     }
 
-    public function delete(Instructeur $instructeur, $row)
+    public function delete(Instructeur $instructeur)
     {
         $instructeurId = $instructeur->Id;
-        $voertuigId = $row;
 
-        DB::table('voertuig_instructeurs')->where('VoertuigId', $voertuigId)->delete();
-        DB::table('saves')->where('VoertuigId', $voertuigId)->delete();
+        DB::table('instructeurs')->where('Id', $instructeurId)->delete();
+        DB::table('voertuig_instructeurs')->where('InstructeurId', $instructeurId)->delete();
+        DB::table('saves')->where('InstructeurId', $instructeurId)->delete();
 
-        return redirect(route('instructeur.list', [$instructeurId]))->with('succes', 'Het door u geselecteerde voertuig is verwijderd');
+        return redirect(route('instructeur.index'))->with('succes', 'test');
     }
 
     public function notActive(Instructeur $instructeur)
