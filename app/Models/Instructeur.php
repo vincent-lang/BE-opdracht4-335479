@@ -27,19 +27,4 @@ class Instructeur extends Model
             ->select('Id')
             ->get();
     }
-
-    public function scopeListGegevens(Builder $information): void
-    {
-        $information
-            ->select('*')
-            ->get();
-    }
-
-    public function scopeEditGegevens(Builder $information): void
-    {
-        $information
-            ->select('*')
-            ->orderBy('AantalSterren', 'desc')
-            ->get();
-    }
 }
