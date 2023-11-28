@@ -25,11 +25,15 @@ class gegevensController extends Controller
     {
         $instructeurId = $instructeur->Id;
 
-        DB::table('instructeurs')->where('Id', $instructeurId)->delete();
-        DB::table('voertuig_instructeurs')->where('InstructeurId', $instructeurId)->delete();
-        DB::table('saves')->where('InstructeurId', $instructeurId)->delete();
+        if ($instructeur->IsActief == false) {
+            return redirect(route('instructeur.index'))->with('succes', 'cant delete him :(');
+        } else {
+            DB::table('voertuig_instructeurs')->where('InstructeurId', $instructeurId)->delete();
+            DB::table('saves')->where('InstructeurId', $instructeurId)->delete();
+            DB::table('instructeurs')->where('Id', $instructeurId)->delete();
 
-        return redirect(route('instructeur.index'))->with('succes', 'test');
+            return redirect(route('instructeur.index'))->with('succes', 'delete him!!!');
+        }
     }
 
     public function notActive(Instructeur $instructeur)

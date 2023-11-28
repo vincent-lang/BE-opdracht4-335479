@@ -31,6 +31,7 @@
             <th>Aantal sterren</th>
             <th>Voertuigen</th>
             <th>Ziekte/Verlof</th>
+            <th>Verwijderen</th>
         </thead>
         <tbody>
             @foreach($instructeurs as $instructeur)
@@ -59,6 +60,11 @@
                     </a>
                 </td>
                 @endif
+                <td>
+                    <a href="{{route('instructeur.delete', [$instructeur->Id])}}">
+                        <img class="small-img" src="img/delete.png" alt="delete.png">
+                    </a>
+                </td>
             </tr>
             @endforeach
         </tbody>
