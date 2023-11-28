@@ -42,7 +42,7 @@
                 <td>{{$instructeur->DatumInDienst}}</td>
                 <td>{{$instructeur->AantalSterren}}</td>
                 <td>
-                    <a href="{{route('instructeur.list', [$instructeur->Id])}}">
+                    <a href="{{route('instructeur.index')}}">
                         <img src="/img/car.png" alt="car.png">
                     </a>
                 </td>
